@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/myapp
+    command: ruby app/server.rb -o 0.0.0.0
+    ports:
+      - "4567:4567"
+    environment:
+      - MONGO_DB_URI=mongodb+srv://jaicke:QPyTartpawWuvgnk@cluster0-upw4h.mongodb.net/test?retryWrites=true&w=majority
+      - MONGO_DB_DATABASE=number_tennyson
+      - MYSQL_HOST=35.199.102.208
+      - MYSQL_USERNAME=jaicke
+      - MYSQL_PASSWORD=root
+      - POSTGRESQL_HOST=35.247.253.55
+      - POSTGRESQL_USERNAME=postgres
+      - POSTGRESQL_PASSWORD=root
+      - SQLSERVER_HOST=35.198.61.178
+      - SQLSERVER_USERNAME=sqlserver
+      - SQLSERVER_PASSWORD=root
